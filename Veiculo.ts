@@ -5,4 +5,11 @@ export class Veiculo{
     numeroMarchas: number = 5;
     marchaAtual: number = 0;
     velocidade: number = 0;
+
+    acelerar(): void {
+        if (this.marchaAtual !== 0) {
+            this.velocidade += this.potencia * 0.1;
+            console.log(this.velocidade);
+        }
+    }
 }
