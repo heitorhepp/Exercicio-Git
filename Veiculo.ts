@@ -12,4 +12,14 @@ export class Veiculo{
             console.log(this.velocidade);
         }
     }
+
+    frear(): void {
+        if (this.velocidade > 0) {
+            this.velocidade -= this.potencia * 0.1;
+            if (this.velocidade < 0) {
+                this.velocidade = 0;
+            }
+            console.log(this.velocidade);
+        }
+    }
 }
