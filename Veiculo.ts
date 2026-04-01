@@ -5,6 +5,14 @@ export class Veiculo{
     numeroMarchas: number = 5;
     marchaAtual: number = 0;
     velocidade: number = 0;
+    motorLigado: boolean = false;
+    farolLigado: boolean = false;
+
+    ligarDesligarFarol(): void {
+        this.farolLigado = !this.farolLigado;
+        const estado = this.farolLigado ? 'ligado' : 'desligado';
+        console.log(`Farol ${estado}`);
+    }
 
     acelerar(): void {
         if (this.marchaAtual !== 0) {

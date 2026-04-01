@@ -12,7 +12,8 @@ while(true){
     console.log("2 - Frear");
     console.log("3 - Subir marcha");
     console.log("4 - Descer marcha");
-    console.log("5 - Imprimir dados do veículo");
+    console.log("5 - Ligar/Desligar farol");
+    console.log("6 - Imprimir dados do veículo");
     console.log("0 - Sair");
 
     const opcao = +teclado('Escolha uma opção: ');
@@ -22,6 +23,21 @@ while(true){
     switch (opcao) {
         case 1:
             acelerar(carro);
+            break;
+        case 2:
+            frear(carro);
+            break;
+        case 3:
+            subirMarcha(carro);
+            break;
+        case 4:
+            descerMarcha(carro);
+            break;
+        case 5:
+            ligarDesligarFarol(carro);
+            break;
+        case 6:
+            imprimirVeiculo(carro);
             break;
     
         default:
@@ -73,4 +89,20 @@ function descerMarcha(veiculo: Veiculo): void{
     } else {
         console.log('Já está na marcha mínima');
     }
+}
+
+function ligarDesligarFarol(veiculo: Veiculo): void {
+    veiculo.ligarDesligarFarol();
+}
+
+function imprimirVeiculo(veiculo: Veiculo): void {
+    console.log('===== DADOS DO VEICULO =====');
+    console.log(`Marca: ${veiculo.marca}`);
+    console.log(`Modelo: ${veiculo.modelo}`);
+    console.log(`Potencia: ${veiculo.potencia}`);
+    console.log(`Numero de marchas: ${veiculo.numeroMarchas}`);
+    console.log(`Marcha atual: ${veiculo.marchaAtual}`);
+    console.log(`Velocidade: ${veiculo.velocidade.toFixed(2)} km/h`);
+    console.log(`Farol: ${veiculo.farolLigado ? 'Ligado' : 'Desligado'}`);
+    console.log('============================');
 }
