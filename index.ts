@@ -9,7 +9,7 @@ ligarFarol(carro);
 
 while(true){
     console.log("########### MENU ###########");
-    console.log("1 - Acelerar");
+    console.log("1 - Acelerar")
     console.log("2 - Frear");
     console.log("3 - Subir marcha");
     console.log("4 - Descer marcha");
@@ -44,7 +44,6 @@ while(true){
         case 7:
             desligarFarol(carro);
             break;
-    
         default:
             console.log('Opção inválida');
             break;
@@ -96,10 +95,10 @@ function descerMarcha(veiculo: Veiculo): void{
     }
 }
 
-function ligarFarol(veiculo: Veiculo): void {
+function ligarFarol(veiculo: Veiculo): void{
     veiculo.ligarFarol();
 }
 
-function desligarFarol(veiculo: Veiculo): void {
+function desligarFarol(veiculo: Veiculo): void{
     veiculo.desligarFarol();
 }
