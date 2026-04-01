@@ -22,4 +22,21 @@ export class Veiculo{
             console.log(this.velocidade);
         }
     }
+    subirMarcha(): void {
+        if (this.marchaAtual < this.numeroMarchas) {
+            this.marchaAtual++;
+            console.log(`Marcha atual: ${this.marchaAtual}`);
+        } else {
+            console.log('Já está na marcha máxima');
+        }
+    }
+
+    descerMarcha(): void {
+        if (this.marchaAtual > 0) {
+            this.marchaAtual--;
+            console.log(`Marcha atual: ${this.marchaAtual}`);
+        } else {
+            console.log('Já está na marcha mínima');
+        }
+    }
 }

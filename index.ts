@@ -25,6 +25,7 @@ while(true){
             break;
     
         default:
+            console.log('Opção inválida');
             break;
     }
 }
@@ -44,4 +45,32 @@ function criaVeiculo(): Veiculo{
     veiculo.potencia = +teclado('Potência: ');
     veiculo.numeroMarchas = +teclado('Número de marchas: ');
     return veiculo;
+}
+
+function frear(veiculo: Veiculo): void{
+    if(veiculo.velocidade > 0){
+    veiculo.velocidade -= veiculo.potencia*0.1;
+    if(veiculo.velocidade < 0){
+        veiculo.velocidade = 0;
+    }
+    console.log(veiculo.velocidade);
+    }
+}
+
+function subirMarcha(veiculo: Veiculo): void{
+    if(veiculo.marchaAtual < veiculo.numeroMarchas){
+        veiculo.marchaAtual++;
+        console.log(`Marcha atual: ${veiculo.marchaAtual}`);
+    } else {
+        console.log('Já está na marcha máxima');
+    }
+}
+
+function descerMarcha(veiculo: Veiculo): void{
+    if(veiculo.marchaAtual > 0){
+        veiculo.marchaAtual--;
+        console.log(`Marcha atual: ${veiculo.marchaAtual}`);
+    } else {
+        console.log('Já está na marcha mínima');
+    }
 }
