@@ -5,6 +5,7 @@ export class Veiculo{
     numeroMarchas: number = 5;
     marchaAtual: number = 0;
     velocidade: number = 0;
+    farolLigado: boolean = false;
 
     acelerar(): void {
         if (this.marchaAtual !== 0) {
@@ -39,4 +40,24 @@ export class Veiculo{
             console.log('Já está na marcha mínima');
         }
     }
+
+    ligarFarol(): void {
+        if (!this.farolLigado) {
+            this.farolLigado = true;
+            console.log('Farol ligado');
+        } else {
+            console.log('O farol já está ligado');
+        }
+    }
+
+    desligarFarol(): void {
+        if (this.farolLigado) {
+            this.farolLigado = false;
+            console.log('Farol desligado');
+        } else {
+            console.log('O farol já está desligado');
+        }
+    }
+
+    
 }
