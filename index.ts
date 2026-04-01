@@ -23,6 +23,18 @@ while(true){
         case 1:
             acelerar(carro);
             break;
+        case 2:
+            frear(carro);
+            break;
+        case 3:
+            subirMarcha(carro);
+            break;
+        case 4:
+            descerMarcha(carro);
+            break;
+        case 5:
+            imprimirVeiculo(carro);
+            break;
     
         default:
             console.log('Opção inválida');
@@ -73,4 +85,15 @@ function descerMarcha(veiculo: Veiculo): void{
     } else {
         console.log('Já está na marcha mínima');
     }
+}
+
+function imprimirVeiculo(veiculo: Veiculo): void {
+    console.log('===== DADOS DO VEICULO =====');
+    console.log(`Marca: ${veiculo.marca}`);
+    console.log(`Modelo: ${veiculo.modelo}`);
+    console.log(`Potencia: ${veiculo.potencia}`);
+    console.log(`Numero de marchas: ${veiculo.numeroMarchas}`);
+    console.log(`Marcha atual: ${veiculo.marchaAtual}`);
+    console.log(`Velocidade: ${veiculo.velocidade.toFixed(2)} km/h`);
+    console.log('============================');
 }
